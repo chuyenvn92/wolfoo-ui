@@ -116,6 +116,65 @@
     background-size: cover;
   }
 
+  .home_partnership::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: 100%;
+    background: url("/src/assets/im_partner_top.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: -1;
+  }
+
+  .home_partnership::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    min-height: 271px;
+    background: url("/src/assets/im_partner_gs.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+  }
+
+  .partnership_btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: url("/src/assets/im_btn.png") no-repeat center;
+    z-index: -1;
+  }
+
+  .wolfoo_footer::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+    height: 141px;
+    width: 100%;
+    background: url("/src/assets/im_ft_gs.png") no-repeat center;
+    transform: translateY(40%);
+  }
+
+  .wolfoo_footer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: 100%;
+    background: url("/src/assets/im_ft_bt.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+  }
+
   .animated_custom {
     animation: updown 3s linear infinite;
   }

@@ -9,7 +9,9 @@ module.exports = {
       "slate-blue": "#7471f4",
       "royal-blue": "#5679eb",
       "white": "#fff",
-      "caribbean-green": "#13d69c"
+      "caribbean-green": "#13d69c",
+      "selective-yellow": "#ffbc00",
+      "illusion": "#f79bb4"
     },
     extend: {
       backgroundImage: {
