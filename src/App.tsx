@@ -1,7 +1,12 @@
+import { Routes } from "react-router-dom";
+import routes from "./Routes/Routes";
+import Header from "./components/Header";
+
 function App() {
   return (
-    <div className="flex items-center justify-center h-screen">
-      Hello React
+    <div className="h-screen">
+      <Header />
+      <Routes>{routes}</Routes>
     </div>
   );
 }

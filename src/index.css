@@ -1,3 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    font-family: Bungee;
+  }
+
+  .home_slogen::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    min-height: 49px;
+    background: url("/src/assets/im_slogen_ripple.png");
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    z-index: 1;
+    transform: rotate(180deg);
+    background-size: cover;
+  }
+
+  .home_slogen::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: 100%;
+    background: url("/src/assets/im_bg_slogen.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100% auto;
+    z-index: 0;
+  }
+
+  .home_subsview::before {
+    content: "";
+    position: absolute;
+    top: 17%;
+    left: 0;
+    right: 0;
+    min-height: 20%;
+    background: url("/src/assets/im_bg_subsv.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+  }
+
+  .home_subsview::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    min-height: 49px;
+    background: url("/src/assets/im_gb_subs_ripple.png");
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    transform: rotate(180deg);
+    background-size: cover;
+  }
+
+  .home_meet::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: 100%;
+    background: url("/src/assets/bg_meet.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: 0;
+  }
+
+  .home_meet::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: 78px;
+    background: url("/src/assets/bg_meet_gs.png");
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+  }
+
+  .home_diaries::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: 100%;
+    background: url("/src/assets/im_bg_diaries.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+  }
+
+  .home_diaries::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    min-height: 72px;
+    background: url("/src/assets/im_diaries_gs.png");
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+  }
+
+  .animated_custom {
+    animation: updown 3s linear infinite;
+  }
+
+  @keyframes updown {
+    0% {
+      transform: translateY(-20px);
+    }
+    50% {
+      transform: translateY(20px);
+    }
+    100% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .time_icon {
+    width: unset !important;
+  }
+
+  .diaries_info_title {
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+  }
+  .diaries_info_description {
+    -webkit-line-clamp: 4;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+  }
+}
