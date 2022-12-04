@@ -11,7 +11,8 @@ module.exports = {
       "white": "#fff",
       "caribbean-green": "#13d69c",
       "selective-yellow": "#ffbc00",
-      "illusion": "#f79bb4"
+      "illusion": "#f79bb4",
+      "shamrock": "#1cd29b"
     },
     extend: {
       backgroundImage: {
