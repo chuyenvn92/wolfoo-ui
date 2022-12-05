@@ -224,7 +224,6 @@
     background-repeat: no-repeat;
     background-position: top center;
     background-size: 100% auto;
-    
   }
 
   .about-us-content::after {
@@ -237,5 +236,43 @@
     background: url("/src/assets/im_bg_ab_bt.png");
     background-repeat: no-repeat;
     background-position: bottom center;
+  }
+
+  .characters-banner {
+    background: url("./assets/banner-bg.png");
+    background-size: cover;
+    height: 610px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .characters-main::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin-top: 15%;
+    background: url("/src/assets/main-before-pattern.png");
+    background-repeat: repeat-y;
+    background-size: 100%;
+    z-index: 1;
+  }
+
+  .characters-main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 15%;
+    background: url("/src/assets/main-before-bg.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100% auto;
+    z-index: 1;
   }
 }
