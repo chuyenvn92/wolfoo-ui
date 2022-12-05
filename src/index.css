@@ -275,4 +275,22 @@
     background-size: 100% auto;
     z-index: 1;
   }
+
+  .charac-thumn-svg {
+    transition: all .3s ease;
+  }
+
+  .charac-detail {
+    pointer-events: all;
+    transform: translateY(0px);
+    transition: all .3s ease;
+    opacity: 1;
+    display: flex !important;
+    align-items: center;
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    color: #fff;
+
+  }
 }
