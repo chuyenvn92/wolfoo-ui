@@ -1,53 +1,24 @@
-import { useMemo } from "react";
-import wolfooImg from "../../assets/wolfoo.png";
-import Lucy from "../../assets/character-13.png";
-import wolfMan from "../../assets/mrs_wolf.png";
-import wolfWoman from "../../assets/ms_wolf.png";
-import pandoWF from "../../assets/Wf_pando.png";
+import { useState } from "react";
 
-import BlueBackground from "../../assets/blue.svg";
-import PinkBackground from "../../assets/pink.svg";
-import OrangeBackground from "../../assets/orange.svg";
-import PurpleBackground from "../../assets/purple.svg";
-
+import { characterList } from "../../data/characterList";
 import CharacterItem from "../../components/CharacterItem";
 
+export interface ICharacter {
+  id: number;
+  img: string;
+  characterBackground: string;
+  name: string;
+  description?: string;
+}
+
 export default function Characters() {
-  const characterList = useMemo(
-    () => [
-      {
-        id: 1,
-        img: wolfooImg,
-        characterBackground: BlueBackground,
-        name: "Wolfoo",
-      },
-      {
-        id: 2,
-        img: Lucy,
-        characterBackground: PinkBackground,
-        name: "Lucy",
-      },
-      {
-        id: 3,
-        img: wolfWoman,
-        characterBackground: OrangeBackground,
-        name: "Mrs. Wolf",
-      },
-      {
-        id: 4,
-        img: wolfMan,
-        characterBackground: PurpleBackground,
-        name: "Mr. Wolf",
-      },
-      {
-        id: 5,
-        img: pandoWF,
-        characterBackground: BlueBackground,
-        name: "Pando",
-      },
-    ],
-    []
-  );
+  const [currentCharacter, setCurrentCharacter] = useState<ICharacter>();
+
+  const handleSelectCharacter = (id: number) => {
+    const result = characterList.find((item) => item.id === id);
+
+    setCurrentCharacter(result as ICharacter);
+  };
 
   return (
     <div>
@@ -70,6 +41,8 @@ export default function Characters() {
                   img={img}
                   name={name}
                   characterBackground={characterBackground}
+                  currentCharacter={currentCharacter}
+                  handleSelectCharacter={handleSelectCharacter}
                 />
               );
             })}

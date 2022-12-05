@@ -277,13 +277,13 @@
   }
 
   .charac-thumn-svg {
-    transition: all .3s ease;
+    transition: all 0.3s ease;
   }
 
   .charac-detail {
     pointer-events: all;
     transform: translateY(0px);
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     opacity: 1;
     display: flex !important;
     align-items: center;
@@ -291,6 +291,19 @@
     left: 5%;
     right: 5%;
     color: #fff;
+  }
 
+  .charac_description_bg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 90%;
+    overflow: visible;
+    stroke: transparent;
+    stroke-width: 8px;
+    transition: all 0.3s ease;
+    z-index: 0;
   }
 }
