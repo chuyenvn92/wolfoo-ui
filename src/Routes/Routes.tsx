@@ -2,6 +2,7 @@ import { Route } from "react-router-dom";
 
 import Homepage from "../pages/Homepage";
 import AboutUs from "../pages/AboutUs";
+import Characters from "../pages/Characters";
 
 const Routes = [
   {
@@ -13,6 +14,11 @@ const Routes = [
     path: "/about-us",
     caseSensitive: true,
     component: <AboutUs />,
+  },
+  {
+    path: "/characters",
+    caseSensitive: true,
+    component: <Characters />,
   },
 ];
 
