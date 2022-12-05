@@ -40,9 +40,9 @@ export default function SubviewSlider() {
     []
   );
   return (
-    <div className="relative overflow-hidden max-w-7xl">
+    <div className="relative w-full mx-auto overflow-hidden max-w-7xl">
       <div className="px-8">
-        <div className="relative block w-full mx-auto my-0 ">
+        <div className="relative block my-0 ">
           <Swiper
             slidesPerView={3}
             spaceBetween={100}
