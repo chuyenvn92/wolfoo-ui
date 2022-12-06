@@ -343,4 +343,28 @@
     background-size: 100% auto;
     z-index: -1;
   }
+
+  .activity-banner {
+    background: url("./assets//banner-pattern.png") repeat center;
+    height: 610px;    
+  }
+
+  .activity-banner::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    background: url("/src/assets/banner-song.png");
+    padding-top: 5%;
+    background-size: 100%;
+  }
+
+  .activity-inner {
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: top center;
+    padding: 3% 12% 10%;
+  }
 }

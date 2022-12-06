@@ -4,6 +4,7 @@ import Homepage from "../pages/Homepage";
 import AboutUs from "../pages/AboutUs";
 import Characters from "../pages/Characters";
 import Diaries from "../pages/Diaries";
+import Activities from "../pages/Activities";
 
 const Routes = [
   {
@@ -25,7 +26,12 @@ const Routes = [
     path: "/diaries",
     caseSensitive: true,
     component: <Diaries />,
-  }
+  },
+  {
+    path: "/activities",
+    caseSensitive: true,
+    component: <Activities />,
+  },
 ];
 
 const routes = Routes.map((route) => (

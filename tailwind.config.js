@@ -13,11 +13,15 @@ module.exports = {
       "selective-yellow": "#ffbc00",
       "illusion": "#f79bb4",
       "shamrock": "#1cd29b",
-      "mellow-apricot": "#ffb973"
+      "mellow-apricot": "#ffb973",
+      "seashell": "#fff4ef",
+      "classic-rose": "#ffd2e4"
     },
     extend: {
       backgroundImage: {
         "header-bg": "url('/src/assets/header-bg.png')",
+        "main-bg": "url('/src/assets/main-bg.png')",
+        "container-bg": "url('/src/assets/container-bg.png')"
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
