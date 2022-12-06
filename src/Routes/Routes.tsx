@@ -3,6 +3,7 @@ import { Route } from "react-router-dom";
 import Homepage from "../pages/Homepage";
 import AboutUs from "../pages/AboutUs";
 import Characters from "../pages/Characters";
+import Diaries from "../pages/Diaries";
 
 const Routes = [
   {
@@ -20,6 +21,11 @@ const Routes = [
     caseSensitive: true,
     component: <Characters />,
   },
+  {
+    path: "/diaries",
+    caseSensitive: true,
+    component: <Diaries />,
+  }
 ];
 
 const routes = Routes.map((route) => (

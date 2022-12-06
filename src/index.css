@@ -306,4 +306,41 @@
     transition: all 0.3s ease;
     z-index: 0;
   }
+
+  .diaries-banner {
+    background: url("./assets//bg_banner_diaries.png");
+    background-size: cover;
+    height: 414px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .diaries-items::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-height: 50%;
+    background: url("/src/assets/bg_2.png");
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    z-index: -1;
+  }
+
+  .diaries-items::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: 50%;
+    background: url("/src/assets/bg_1.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100% auto;
+    z-index: -1;
+  }
 }
