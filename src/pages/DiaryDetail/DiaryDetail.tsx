@@ -1,6 +1,10 @@
-import React, { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import React, { useCallback, useEffect, useState } from "react";
 import { getDetailDiary, IDiary } from "../../features/diaries/diariesAPI";
+
+import DiaryDetailBanner from "../../components/DiaryDetailBanner";
+import DiaryDetailContent from "../../components/DiaryDetailContent";
+import DiaryDetailPending from "../../components/DiaryDetailPending";
 
 export default function DiaryDetail() {
   const [diaryData, setDiaryData] = useState<IDiary>();
@@ -31,17 +35,16 @@ export default function DiaryDetail() {
   return (
     <React.Fragment>
       {diaryData ? (
-        <div style={style} className="diaries-child-banner">
-          <div className="relative w-full max-auto max-w-7xl">
-            <div className="flex flex-col items-center justify-center">
-              <p className="text-5xl text-center text-white">
-                {diaryData.title}
-              </p>
-            </div>
-          </div>
-        </div>
+        <React.Fragment>
+          <DiaryDetailBanner
+            style={style}
+            title={diaryData.title}
+            createdAt={diaryData._createdAt}
+          />
+          <DiaryDetailContent content={diaryData.description} />
+        </React.Fragment>
       ) : (
-        <p>Loading...</p>
+        <DiaryDetailPending />
       )}
     </React.Fragment>
   );
