@@ -1,8 +1,29 @@
+import { useEffect, useState } from "react";
+import sanityClient from "../../client";
+
 import DiaryItem from "../../components/DiaryItem";
 
-import { diariesData } from "../../data/diariesData";
-
 export default function Diaries() {
+  const [diariesData, setDiariesData] = useState([]);
+  useEffect(() => {
+    sanityClient
+      .fetch(
+        `*[_type == "chef"]{
+        name,
+        _createdAt,
+        bio,
+        image{
+          asset->{
+          _id,
+          url
+        },
+      }
+    }`
+      )
+      .then((data) => setDiariesData(data))
+      .catch(console.error);
+  }, []);
+
   return (
     <div>
       <div className="diaries-banner">
@@ -16,17 +37,17 @@ export default function Diaries() {
         <div className="w-full mx-auto max-w-7xl">
           <div className="mb-[45%] pt-[10%]">
             <div className="flex flex-wrap items-center justify-start gap-8 m-auto xl:gap-16">
-              {diariesData.map(({ image, time, title, description }, index) => {
+              {diariesData.map((item: any, index) => {
                 return (
                   <div
                     key={index}
                     className="w-[45%] xl:w-[316px] py-9 px-0 mx-auto"
                   >
                     <DiaryItem
-                      image={image}
-                      time={time}
-                      title={title}
-                      description={description}
+                      image={item.image.asset.url}
+                      time={item._createdAt}
+                      title={item.name}
+                      description={item.bio}
                     />
                   </div>
                 );
