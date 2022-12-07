@@ -1,28 +1,10 @@
-import { useEffect, useState } from "react";
-import sanityClient from "../../client";
+import { useAppSelector } from "../../app/hooks";
+import { selectDiaries } from "../../features/diaries/diariesSlice";
 
 import DiaryItem from "../../components/DiaryItem";
 
 export default function Diaries() {
-  const [diariesData, setDiariesData] = useState([]);
-  useEffect(() => {
-    sanityClient
-      .fetch(
-        `*[_type == "chef"]{
-        name,
-        _createdAt,
-        bio,
-        image{
-          asset->{
-          _id,
-          url
-        },
-      }
-    }`
-      )
-      .then((data) => setDiariesData(data))
-      .catch(console.error);
-  }, []);
+  const diaries = useAppSelector(selectDiaries);
 
   return (
     <div>
@@ -37,7 +19,7 @@ export default function Diaries() {
         <div className="w-full mx-auto max-w-7xl">
           <div className="mb-[45%] pt-[10%]">
             <div className="flex flex-wrap items-center justify-start gap-8 m-auto xl:gap-16">
-              {diariesData.map((item: any, index) => {
+              {diaries.map((item: any, index) => {
                 return (
                   <div
                     key={index}
