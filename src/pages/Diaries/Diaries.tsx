@@ -28,8 +28,9 @@ export default function Diaries() {
                     <DiaryItem
                       image={item.image.asset.url}
                       time={item._createdAt}
-                      title={item.name}
-                      description={item.bio}
+                      title={item.title}
+                      description={item.description}
+                      slug={item.slug.current}
                     />
                   </div>
                 );
