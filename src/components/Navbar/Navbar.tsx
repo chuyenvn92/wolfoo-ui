@@ -1,6 +1,9 @@
 import clsx from "clsx";
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+
+import { useAppDispatch } from "../../app/hooks";
+import { getDiariesApi } from "../../features/diaries/diariesSlice";
 
 import logo from "../../assets/logo-new.png";
 
@@ -14,6 +17,13 @@ const menuKey = {
 };
 
 export default function Navbar() {
+
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(getDiariesApi());
+  }, [dispatch]);
+
   const location = useLocation();
 
   const [currentPath, setCurrentPath] = useState(location.pathname);

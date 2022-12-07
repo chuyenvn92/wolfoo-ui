@@ -1,16 +1,16 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
+import { useAppSelector } from "../../app/hooks";
+import { selectDiaries } from "../../features/diaries/diariesSlice";
 
 import DiaryItem from "../DiaryItem";
 
 import "swiper/css/navigation";
 import "swiper/css";
 
-interface IProps {
-  diariesData: any;
-}
+export default function DiariesSlider() {
+  const diaries = useAppSelector(selectDiaries);
 
-export default function DiariesSlider({ diariesData }: IProps) {
   return (
     <div className="relative overflow-hidden max-w-7xl">
       <div className="px-8">
@@ -24,7 +24,7 @@ export default function DiariesSlider({ diariesData }: IProps) {
             modules={[Navigation]}
             className="mySwiper"
           >
-            {diariesData.map((item: any) => {
+            {diaries.map((item: any) => {
               return (
                 <SwiperSlide key={item.image.asset._id}>
                   <DiaryItem
