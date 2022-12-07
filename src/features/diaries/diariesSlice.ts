@@ -1,10 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
 
-import { getDiaries } from "./diariesAPI";
+import { getDiaries, IDiary } from "./diariesAPI";
 
 export interface DiariesState {
-  diaries: any[];
+  diaries: IDiary[];
 }
 
 const initialState: DiariesState = {
@@ -25,7 +25,7 @@ export const diariesSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getDiariesApi.fulfilled, (state, action) => {
-      state.diaries = action.payload;
+      state.diaries = action.payload as IDiary[];
     });
   },
 });

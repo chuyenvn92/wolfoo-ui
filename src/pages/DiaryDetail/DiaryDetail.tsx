@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getDetailDiary } from "../../features/diaries/diariesAPI";
+import { getDetailDiary, IDiary } from "../../features/diaries/diariesAPI";
 
 export default function DiaryDetail() {
-  const [diaryData, setDiaryData] = useState(null);
+  const [diaryData, setDiaryData] = useState<IDiary>();
   const [style, setStyle] = useState({
     backgroundImage: "#ffb973",
   });
@@ -11,7 +11,7 @@ export default function DiaryDetail() {
 
   const fetchDiaryDetail = useCallback(async () => {
     if (slug) {
-      const diaryResponse = await getDetailDiary(slug);
+      const diaryResponse = (await getDetailDiary(slug)) as IDiary[];
       setDiaryData(diaryResponse[0]);
     }
   }, [slug]);
@@ -23,7 +23,7 @@ export default function DiaryDetail() {
   useEffect(() => {
     if (diaryData) {
       setStyle({
-        backgroundImage: `url(${(diaryData as any).image.asset.url})`,
+        backgroundImage: `url(${diaryData.image.asset.url})`,
       });
     }
   }, [diaryData]);
@@ -34,7 +34,9 @@ export default function DiaryDetail() {
         <div style={style} className="diaries-child-banner">
           <div className="relative w-full max-auto max-w-7xl">
             <div className="flex flex-col items-center justify-center">
-              <p className="text-5xl text-center text-white">{(diaryData as any).title}</p>
+              <p className="text-5xl text-center text-white">
+                {diaryData.title}
+              </p>
             </div>
           </div>
         </div>

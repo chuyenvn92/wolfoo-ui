@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 import { useAppSelector } from "../../app/hooks";
 import { selectDiaries } from "../../features/diaries/diariesSlice";
+import { IDiary } from "../../features/diaries/diariesAPI";
 
 import DiaryItem from "../DiaryItem";
 
@@ -24,19 +25,21 @@ export default function DiariesSlider() {
             modules={[Navigation]}
             className="mySwiper"
           >
-            {diaries.map((item: any) => {
-              return (
-                <SwiperSlide key={item.image.asset._id}>
-                  <DiaryItem
-                    image={item.image.asset.url}
-                    time={item._createdAt}
-                    title={item.title}
-                    description={item.description}
-                    slug={item.slug.current}
-                  />
-                </SwiperSlide>
-              );
-            })}
+            {diaries.map(
+              ({ image, _createdAt, title, description, slug }: IDiary) => {
+                return (
+                  <SwiperSlide key={slug.current}>
+                    <DiaryItem
+                      image={image.asset.url}
+                      time={_createdAt}
+                      title={title}
+                      description={description}
+                      slug={slug.current}
+                    />
+                  </SwiperSlide>
+                );
+              }
+            )}
           </Swiper>
         </div>
       </div>

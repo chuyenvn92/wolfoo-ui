@@ -1,5 +1,6 @@
 import { useAppSelector } from "../../app/hooks";
 import { selectDiaries } from "../../features/diaries/diariesSlice";
+import { IDiary } from "../../features/diaries/diariesAPI";
 
 import DiaryItem from "../../components/DiaryItem";
 
@@ -19,22 +20,24 @@ export default function Diaries() {
         <div className="w-full mx-auto max-w-7xl">
           <div className="mb-[45%] pt-[10%]">
             <div className="flex flex-wrap items-center justify-start gap-8 m-auto xl:gap-16">
-              {diaries.map((item: any, index) => {
-                return (
-                  <div
-                    key={index}
-                    className="w-[45%] xl:w-[316px] py-9 px-0 mx-auto"
-                  >
-                    <DiaryItem
-                      image={item.image.asset.url}
-                      time={item._createdAt}
-                      title={item.title}
-                      description={item.description}
-                      slug={item.slug.current}
-                    />
-                  </div>
-                );
-              })}
+              {diaries.map(
+                ({ image, title, _createdAt, description, slug }: IDiary) => {
+                  return (
+                    <div
+                      key={slug.current}
+                      className="w-[45%] xl:w-[316px] py-9 px-0 mx-auto"
+                    >
+                      <DiaryItem
+                        image={image.asset.url}
+                        time={_createdAt}
+                        title={title}
+                        description={description}
+                        slug={slug.current}
+                      />
+                    </div>
+                  );
+                }
+              )}
             </div>
           </div>
         </div>
