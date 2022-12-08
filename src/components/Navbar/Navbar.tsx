@@ -17,7 +17,6 @@ const menuKey = {
 };
 
 export default function Navbar() {
-
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -66,7 +65,9 @@ export default function Navbar() {
     <div className="xl:px-12 mx-9">
       <div className="w-full mx-auto max-w-7xl">
         <div className="flex justify-between">
-          <img src={logo} alt="new_logo" className="hidden xl:block" />
+          <Link to={"/"}>
+            <img src={logo} alt="new_logo" className="hidden xl:block" />
+          </Link>
           <div className="flex items-center">
             {menuList.map(({ name, path }, index) => {
               return (
