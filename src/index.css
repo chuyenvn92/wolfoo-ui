@@ -426,4 +426,40 @@
     background-position: bottom center;
     z-index: -1;
   }
+
+  .shop-online-banner {
+    background: url("./assets/banner-shop.png");
+    background-color: #fff6e2;
+    height: 410px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100%;
+  }
+
+  .shop-online-banner::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    background-size: 100%;
+    padding-top: 10%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background: url("./assets//banner-after.png");
+  }
+
+  .shop-online-body {
+    background-color: #ffeaaf;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto 90%;
+    padding: 5% 0;
+    background: url("./assets//body-pattern-bg.png");
+  }
 }

@@ -6,6 +6,7 @@ import Characters from "../pages/Characters";
 import Diaries from "../pages/Diaries";
 import Activities from "../pages/Activities";
 import DiaryDetail from "../pages/DiaryDetail";
+import ShopOnline from "../pages/ShopOnline";
 
 const Routes = [
   {
@@ -37,6 +38,11 @@ const Routes = [
     path: "/diaries/:slug",
     caseSensitive: true,
     component: <DiaryDetail />,
+  },
+  {
+    path: "/shop",
+    caseSensitive: true,
+    component: <ShopOnline />,
   },
 ];
 
