@@ -484,4 +484,37 @@
     opacity: 1;
     margin-top: -16px;
   }
+
+  .activity-banner {
+    background-image: url("./assets/banner-detail-new.png");
+    background-size: cover;
+    background-position: center center;
+    background-color: #fff4ef;
+    height: 610px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .activity-banner::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    background-size: 100%;
+    padding-top: 5%;
+    background-image: url("./assets//banner-song.png");
+  }
+
+  .color-purple {
+    text-shadow: 2px 0 #ffffff;
+    letter-spacing: 1.5px;
+    opacity: 0.9;
+    font-size: 23px;
+    color: #7471f4;
+    text-align: center;
+  }
 }

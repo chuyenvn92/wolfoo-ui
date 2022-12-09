@@ -21,7 +21,8 @@ module.exports = {
       backgroundImage: {
         "header-bg": "url('/src/assets/header-bg.png')",
         "main-bg": "url('/src/assets/main-bg.png')",
-        "container-bg": "url('/src/assets/container-bg.png')"
+        "container-bg": "url('/src/assets/container-bg.png')",
+        "coloring-body-detail": "url('/src/assets/body-detail-bg.png)"
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],

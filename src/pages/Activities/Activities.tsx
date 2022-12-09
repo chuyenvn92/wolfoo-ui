@@ -1,4 +1,5 @@
 import React, { useMemo } from "react";
+import { Link } from "react-router-dom";
 
 import bottomPattern from "../../assets/bottom-pattern.png";
 import coloringPicture from "../../assets/color_activity.png";
@@ -12,18 +13,23 @@ export default function Activities() {
     () => [
       {
         img: coloringPicture,
+        link: "/coloring-picture"
       },
       {
         img: drawIn,
+        link: "/"
       },
       {
         img: findDifferences,
+        link: "/"
       },
       {
         img: funMatching,
+        link: "/"
       },
       {
         img: mazeGame,
+        link: "/"
       },
     ],
     []
@@ -40,11 +46,11 @@ export default function Activities() {
 
       <div className="w-full pb-12 bg-main-bg bg-classic-rose">
         <div className="flex flex-wrap items-center justify-center mx-[6%] xl:mx-[14%] bg-container-bg activity-inner">
-          {activityList.map(({ img }, index) => {
+          {activityList.map(({ img, link }, index) => {
             return (
-              <a href="/" key={index} className="block w-1/3 my-6 text-center ">
+              <Link to={link} key={index} className="block w-1/3 my-6 text-center ">
                 <img src={img} alt="activities" className="w-[187px]" />
-              </a>
+              </Link>
             );
           })}
         </div>
