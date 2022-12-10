@@ -1,28 +1,68 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useMemo } from "react";
 
-import RightArrow from "../../assets/im_arrow_r.png";
+import ActivityBanner from "../../components/AcitvitiesBanner";
+import ActivityContent from "../../components/ActivityContent";
+import ColoringBanner from "../../assets/banner-detail-new.png";
+
+import drawIn from "../../assets/draw-activity.png";
+import findDifferences from "../../assets/find-activity.png";
+import funMatching from "../../assets/fun_activity.png";
+import mazeGame from "../../assets/maze-game.png";
+import contentBackground from "../../assets/body-detail-bg.png";
+
+import previewImgPdf_1 from "../../assets/preview_img_1.png";
+import previewImgPdf_2 from "../../assets/previewImg_2.png";
+import previewImgPdf_3 from "../../assets/previewImg_3.png";
 
 export default function ColoringPicture() {
+  const data = useMemo(
+    () => [
+      {
+        image: previewImgPdf_1,
+      },
+      {
+        image: previewImgPdf_2,
+      },
+      {
+        image: previewImgPdf_3,
+      },
+    ],
+    []
+  );
+
+  const activityList = useMemo(
+    () => [
+      {
+        img: drawIn,
+        link: "/",
+      },
+      {
+        img: findDifferences,
+        link: "/",
+      },
+      {
+        img: funMatching,
+        link: "/",
+      },
+      {
+        img: mazeGame,
+        link: "/",
+      },
+    ],
+    []
+  );
   return (
     <React.Fragment>
-      <div className="activity-banner">
-        <div className="w-full pb-12 mx-auto max-w-7xl">
-          <h1 className=" mt-[66px] text-[55px] text-center text-white mb-2">
-            Coloring Pictures
-          </h1>
-          <h6 className="color-purple">
-            <div className="flex items-center justify-center">
-              Back to activities{" "}
-              <Link to={"/activities"}>
-                <img src={RightArrow} alt="arrow" className="ml-4" />
-              </Link>
-            </div>
-          </h6>
-        </div>
-      </div>
+      <ActivityBanner
+        title="Coloring Pictures"
+        style={{ backgroundImage: `url(${ColoringBanner})` }}
+      />
 
-      <div className="py-12 bg-classic-rose bg-coloring-body-detail"></div>
+      <ActivityContent
+        contentBackground={contentBackground}
+        activityList={activityList}
+        contentList={data}
+      />
     </React.Fragment>
   );
 }

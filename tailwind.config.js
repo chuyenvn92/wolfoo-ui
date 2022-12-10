@@ -3,26 +3,25 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     colors: {
-      "jadestone": "#02a99e",
+      jadestone: "#02a99e",
       "bus-yellow": "#fad900",
       "corn-field": "#fff7bd",
       "slate-blue": "#7471f4",
       "royal-blue": "#5679eb",
-      "white": "#fff",
+      white: "#fff",
       "caribbean-green": "#13d69c",
       "selective-yellow": "#ffbc00",
-      "illusion": "#f79bb4",
-      "shamrock": "#1cd29b",
+      illusion: "#f79bb4",
+      shamrock: "#1cd29b",
       "mellow-apricot": "#ffb973",
-      "seashell": "#fff4ef",
-      "classic-rose": "#ffd2e4"
+      seashell: "#fff4ef",
+      "classic-rose": "#ffd2e4",
     },
     extend: {
       backgroundImage: {
         "header-bg": "url('/src/assets/header-bg.png')",
         "main-bg": "url('/src/assets/main-bg.png')",
         "container-bg": "url('/src/assets/container-bg.png')",
-        "coloring-body-detail": "url('/src/assets/body-detail-bg.png)"
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],

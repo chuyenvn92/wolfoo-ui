@@ -36,7 +36,7 @@ export default function Activities() {
   );
   return (
     <React.Fragment>
-      <div className="relative flex items-center justify-center activity-banner bg-seashell">
+      <div className="relative flex items-center justify-center activity-banner-root bg-seashell">
         <div className="w-full mx-auto max-w-7xl">
           <h1 className="mt-16 text-6xl text-center text-slate-blue">
             Activities
