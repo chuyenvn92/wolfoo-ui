@@ -2,11 +2,10 @@ import ActivityContentItem from "../ActivityContentItem";
 import bottomPattern from "../../assets/bottom-pattern.png";
 
 import { Link } from "react-router-dom";
+import { IPicture } from "../../features/activities/activitiesAPI";
 
 interface IProps {
-  contentList: {
-    image: string;
-  }[];
+  contentList: IPicture[];
   activityList: {
     link: string;
     img: string;
@@ -26,8 +25,14 @@ export default function ActivityContent({
     >
       <div className="flex justify-center w-full pb-12 mx-auto mb-12 max-w-7xl">
         <div className="relative inline-flex flex-wrap gap-12">
-          {contentList.map(({ image }, index) => {
-            return <ActivityContentItem key={index} image={image} />;
+          {contentList.map((item, index) => {
+            return (
+              <ActivityContentItem
+                key={index}
+                image={item.image.asset.url}
+                file={item.file.asset.url}
+              />
+            );
           })}
         </div>
       </div>

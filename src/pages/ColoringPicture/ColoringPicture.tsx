@@ -9,26 +9,11 @@ import findDifferences from "../../assets/find-activity.png";
 import funMatching from "../../assets/fun_activity.png";
 import mazeGame from "../../assets/maze-game.png";
 import contentBackground from "../../assets/body-detail-bg.png";
-
-import previewImgPdf_1 from "../../assets/preview_img_1.png";
-import previewImgPdf_2 from "../../assets/previewImg_2.png";
-import previewImgPdf_3 from "../../assets/previewImg_3.png";
+import { useAppSelector } from "../../app/hooks";
+import { selectPictures } from "../../features/activities/activitiesSlice";
 
 export default function ColoringPicture() {
-  const data = useMemo(
-    () => [
-      {
-        image: previewImgPdf_1,
-      },
-      {
-        image: previewImgPdf_2,
-      },
-      {
-        image: previewImgPdf_3,
-      },
-    ],
-    []
-  );
+  const pictures = useAppSelector(selectPictures);
 
   const activityList = useMemo(
     () => [
@@ -61,7 +46,7 @@ export default function ColoringPicture() {
       <ActivityContent
         contentBackground={contentBackground}
         activityList={activityList}
-        contentList={data}
+        contentList={pictures}
       />
     </React.Fragment>
   );
