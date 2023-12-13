@@ -1,7 +1,6 @@
 import { useMemo } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
-import { Link } from "react-router-dom";
 
 import videoImg1 from "../../assets/maxresdefault.jpg";
 import videoImg2 from "../../assets/maxresdefault2.jpg";
@@ -18,19 +17,19 @@ export default function SubviewSlider() {
     () => [
       {
         image: videoImg1,
-        link: "https://www.youtube.com/watch?v=mE5J3sdgvOo",
+        link: "https://www.youtube.com/watch?v=GE6iBc2nRm0",
       },
       {
         image: videoImg2,
-        link: "https://www.youtube.com/watch?v=mE5J3sdgvOo",
+        link: "https://www.youtube.com/watch?v=YEKmAAbOU70",
       },
       {
         image: videoImg3,
-        link: "https://www.youtube.com/watch?v=mE5J3sdgvOo",
+        link: "https://www.youtube.com/watch?v=EgRMxCLkJDQ",
       },
       {
         image: videoImg4,
-        link: "https://www.youtube.com/watch?v=mE5J3sdgvOo",
+        link: "https://www.youtube.com/watch?v=4gEKAGiryso",
       },
       {
         image: videoImg5,
@@ -55,9 +54,9 @@ export default function SubviewSlider() {
             {sliderData.map(({ image, link }, index) => {
               return (
                 <SwiperSlide key={index}>
-                  <Link to={link}>
+                  <a href={link} target="_blank" rel="noopener noreferrer">
                     <img src={image} className="rounded-[20px]" alt="video" />
-                  </Link>
+                  </a>
                 </SwiperSlide>
               );
             })}
