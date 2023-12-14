@@ -465,7 +465,7 @@
 
   .coming-soon {
     opacity: 0;
-    pointer-events: none;
+    /* pointer-events: none; */
     position: absolute;
     left: 40px;
     right: 40px;

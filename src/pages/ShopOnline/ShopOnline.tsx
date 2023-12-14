@@ -17,7 +17,8 @@ export default function ShopOnline() {
       img: img1,
       logo: shopify,
       label: "wolfoo world",
-      subText: "store"
+      subText: "store",
+      link: 'http://127.0.0.1:8000/',
     },
     {
       img: img2,
@@ -66,7 +67,7 @@ export default function ShopOnline() {
                 <div className="grid grid-cols-4 gap-9">
                   {shopOnlineData.map((item, index) => {
                     return (
-                      <Link to={"/"} key={index} className="relative block pb-4 rounded-md bg-corn-field mb-7 shop-item">
+                      <div key={index} className="relative block pb-4 rounded-md bg-corn-field mb-7 shop-item">
                         <div className="flex flex-col items-center justify-center">
                           <div>
                             <img src={item.logo} alt="shopify" className="mb-7 mt-[-24px]" />
@@ -78,9 +79,17 @@ export default function ShopOnline() {
                             <p className="text-xl ">{item.label}</p>
                             <span>{item.subText}</span>
                           </div>
+                          {item.link ?
+                            <a
+                            href={item.link}
+                            target="_blank"
+                            rel="noreferrer"
+                          > <span className="coming-soon">Shop now</span>
+                          </a> :
                           <span className="coming-soon">Coming soon</span>
+                          }                          
                         </div>
-                      </Link>
+                      </div>
                     )
                   })}
                 </div>
