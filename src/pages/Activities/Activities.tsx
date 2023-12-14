@@ -17,11 +17,11 @@ export default function Activities() {
       },
       {
         img: drawIn,
-        link: "/"
+        link: "/draw-in"
       },
       {
         img: findDifferences,
-        link: "/"
+        link: "/find-the-differences"
       },
       {
         img: funMatching,

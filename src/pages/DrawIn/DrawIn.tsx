@@ -2,28 +2,28 @@ import React, { useMemo } from "react";
 
 import ActivityBanner from "../../components/AcitvitiesBanner";
 import ActivityContent from "../../components/ActivityContent";
-import ColoringBanner from "../../assets/banner-detail-new.png";
+import DrawInBanner from "../../assets/drawin_banner.jpeg";
 
-import drawIn from "../../assets/draw-activity.png";
+import coloring from "../../assets/color_activity.png";
 import findDifferences from "../../assets/find-activity.png";
 import funMatching from "../../assets/fun_activity.png";
 import mazeGame from "../../assets/maze-game.png";
 import contentBackground from "../../assets/body-detail-bg.png";
 import { useAppSelector } from "../../app/hooks";
-import { selectPictures } from "../../features/activities/activitiesSlice";
+import { selectDrawIn } from "../../features/activities/activitiesSlice";
 
-export default function ColoringPicture() {
-  const pictures = useAppSelector(selectPictures);
+export default function DrawIn() {
+  const drawIn = useAppSelector(selectDrawIn);
 
   const activityList = useMemo(
     () => [
       {
-        img: drawIn,
-        link: "/draw-in",
+        img: coloring,
+        link: "/coloring-picture",
       },
       {
         img: findDifferences,
-        link: "/find-the-differences",
+        link: "/",
       },
       {
         img: funMatching,
@@ -39,14 +39,14 @@ export default function ColoringPicture() {
   return (
     <React.Fragment>
       <ActivityBanner
-        title="Coloring Pictures"
-        style={{ backgroundImage: `url(${ColoringBanner})` }}
+        title="Draw in"
+        style={{ backgroundImage: `url(${DrawInBanner})` }}
       />
 
       <ActivityContent
         contentBackground={contentBackground}
         activityList={activityList}
-        contentList={pictures}
+        contentList={drawIn}
       />
     </React.Fragment>
   );

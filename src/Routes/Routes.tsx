@@ -8,6 +8,8 @@ import Activities from "../pages/Activities";
 import DiaryDetail from "../pages/DiaryDetail";
 import ShopOnline from "../pages/ShopOnline";
 import ColoringPicture from "../pages/ColoringPicture";
+import DrawIn from "../pages/DrawIn";
+import FindDifferent from "../pages/FindDifferent";
 
 const Routes = [
   {
@@ -49,6 +51,16 @@ const Routes = [
     path: "/coloring-picture",
     caseSensitive: true,
     component: <ColoringPicture />,
+  },
+  {
+    path: "/draw-in",
+    caseSensitive: true,
+    component: <DrawIn />,
+  },
+  {
+    path: "/find-the-differences",
+    caseSensitive: true,
+    component: <FindDifferent />,
   },
 ];
 
