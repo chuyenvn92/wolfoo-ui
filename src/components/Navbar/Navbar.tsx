@@ -6,7 +6,7 @@ import { useAppDispatch } from "../../app/hooks";
 import { getDiariesApi } from "../../features/diaries/diariesSlice";
 
 import logo from "../../assets/logo-new.png";
-import { getPicturesApi, getDrawInApi, getFindDifferentApi } from "../../features/activities/activitiesSlice";
+import { getPicturesApi, getDrawInApi, getFindDifferentApi, getFunMatchingApi, getMazegameApi } from "../../features/activities/activitiesSlice";
 
 const menuKey = {
   homepage: "Home page",
@@ -25,6 +25,8 @@ export default function Navbar() {
     dispatch(getPicturesApi());
     dispatch(getDrawInApi());
     dispatch(getFindDifferentApi());
+    dispatch(getFunMatchingApi());
+    dispatch(getMazegameApi());
   }, [dispatch]);
 
   const location = useLocation();

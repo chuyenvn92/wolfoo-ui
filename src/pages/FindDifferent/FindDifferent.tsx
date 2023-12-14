@@ -27,11 +27,11 @@ export default function FindDifferent() {
       },
       {
         img: funMatching,
-        link: "/",
+        link: "/fun-matching",
       },
       {
         img: mazeGame,
-        link: "/",
+        link: "/maze-game",
       },
     ],
     []

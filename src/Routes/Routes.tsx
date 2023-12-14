@@ -10,6 +10,8 @@ import ShopOnline from "../pages/ShopOnline";
 import ColoringPicture from "../pages/ColoringPicture";
 import DrawIn from "../pages/DrawIn";
 import FindDifferent from "../pages/FindDifferent";
+import FunMatching from "../pages/FunMatching";
+import Mazegame from "../pages/Mazegame";
 
 const Routes = [
   {
@@ -61,6 +63,16 @@ const Routes = [
     path: "/find-the-differences",
     caseSensitive: true,
     component: <FindDifferent />,
+  },
+  {
+    path: "/fun-matching",
+    caseSensitive: true,
+    component: <FunMatching />,
+  },
+  {
+    path: "/maze-game",
+    caseSensitive: true,
+    component: <Mazegame />,
   },
 ];
 

@@ -81,3 +81,49 @@ export const getFindDifferent = async () => {
     return { error };
   }
 };
+
+export const getFunMatching = async () => {
+  const funmatchingQuery = `*[_type == "funmatching"]{
+    image{
+      asset->{
+      url
+    },
+  },
+  file{
+    asset->{
+      url
+    }
+  }
+}`;
+
+  try {
+    const funMatching = (await sanityClient.fetch(funmatchingQuery)) as IPicture[];
+
+    return funMatching;
+  } catch (error) {
+    return { error };
+  }
+};
+
+export const getMazegame = async () => {
+  const mazegameQuery = `*[_type == "mazegame"]{
+    image{
+      asset->{
+      url
+    },
+  },
+  file{
+    asset->{
+      url
+    }
+  }
+}`;
+
+  try {
+    const mazegame = (await sanityClient.fetch(mazegameQuery)) as IPicture[];
+
+    return mazegame;
+  } catch (error) {
+    return { error };
+  }
+};

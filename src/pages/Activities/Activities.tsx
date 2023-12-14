@@ -25,11 +25,11 @@ export default function Activities() {
       },
       {
         img: funMatching,
-        link: "/"
+        link: "/fun-matching"
       },
       {
         img: mazeGame,
-        link: "/"
+        link: "/maze-game"
       },
     ],
     []

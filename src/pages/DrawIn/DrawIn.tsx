@@ -23,15 +23,15 @@ export default function DrawIn() {
       },
       {
         img: findDifferences,
-        link: "/",
+        link: "/find-the-differences",
       },
       {
         img: funMatching,
-        link: "/",
+        link: "/fun-matching",
       },
       {
         img: mazeGame,
-        link: "/",
+        link: "/maze-game",
       },
     ],
     []

@@ -2,18 +2,18 @@ import React, { useMemo } from "react";
 
 import ActivityBanner from "../../components/AcitvitiesBanner";
 import ActivityContent from "../../components/ActivityContent";
-import ColoringBanner from "../../assets/banner-detail-new.png";
+import mazeBanner from "../../assets/maze-banner.jpeg";
 
 import drawIn from "../../assets/draw-activity.png";
 import findDifferences from "../../assets/find-activity.png";
+import coloring from "../../assets/color_activity.png";
 import funMatching from "../../assets/fun_activity.png";
-import mazeGame from "../../assets/maze-game.png";
 import contentBackground from "../../assets/body-detail-bg.png";
 import { useAppSelector } from "../../app/hooks";
-import { selectPictures } from "../../features/activities/activitiesSlice";
+import { selectMazegame } from "../../features/activities/activitiesSlice";
 
-export default function ColoringPicture() {
-  const pictures = useAppSelector(selectPictures);
+export default function MazeGame() {
+  const mazegame = useAppSelector(selectMazegame);
 
   const activityList = useMemo(
     () => [
@@ -26,12 +26,12 @@ export default function ColoringPicture() {
         link: "/find-the-differences",
       },
       {
-        img: funMatching,
-        link: "/fun-matching",
+        img: coloring,
+        link: "/coloring-picture",
       },
       {
-        img: mazeGame,
-        link: "/maze-game",
+        img: funMatching,
+        link: "/fun-matching",
       },
     ],
     []
@@ -39,14 +39,14 @@ export default function ColoringPicture() {
   return (
     <React.Fragment>
       <ActivityBanner
-        title="Coloring Pictures"
-        style={{ backgroundImage: `url(${ColoringBanner})` }}
+        title="Maze"
+        style={{ backgroundImage: `url(${mazeBanner})` }}
       />
 
       <ActivityContent
         contentBackground={contentBackground}
         activityList={activityList}
-        contentList={pictures}
+        contentList={mazegame}
       />
     </React.Fragment>
   );
